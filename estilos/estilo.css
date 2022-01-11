@@ -1,12 +1,15 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
 
 :root {
     --fontePadrao: 'Nunito', sans-serif;
     --fonteTitulo: 'Luxurious Roman', cursive;
+
+    --verde: rgb(0, 156, 59);
+    --amarelo: rgb(255, 233, 0);
+    --azul: rgb(0, 39, 118);
 }
 
 * {
@@ -14,40 +17,76 @@
     padding: 0;
 }
 
+body {
+    font-family: var(--fontePadrao);
+}
+
 header {
     padding: 3em;
-    background-color: rgba(255, 255, 0, 0.8);
+    background-color: white;
 }
 
 header > h1 {
     font-family: var(--fonteTitulo);
     font-size: 3em;
     text-align: center;
+    color: var(--azul);
 }
 
-section {
-    padding: 2% 0 2% 5%;
+section > h2 {
+    padding: 2%;
+    background-color: var(--azul);
+    color: white;
+    font-family: var(--fonteTitulo);
+    font-size: 2em;
+    text-indent: 10%;
 }
 
-section#unidadeFederativa {
-    background-color: #B6D7F6;
-    background-image: url('../imagens/brasil.jpg');
+article {
+    padding: 5%;
+}
+
+article#porUnidadeFederativa {
+    background-image: url('../imagens/brasil01.jpg');
     background-size: cover;
     background-position: center center;
 }
 
-section > h2 {
-    margin-bottom: 2%;
-    font-family: var(--fonteTitulo);
-    font-size: 2em;
-    text-indent: 2%;
+article#porRegiao {
+    background-image: url('../imagens/brasil02.jpg');
+    background-size: cover;
+    background-position: left center;
 }
 
 table {
     position: relative;
-    width: 40vw;
     background-color: white;
     border-collapse: collapse;
+    text-align: center;
+}
+
+#porUnidadeFederativa > table {
+    width: 40vw;
+}
+
+#porRegiao > table {
+    width: 50vw;
+}
+
+.colunaRegiao {
+    width: 10vw;
+}
+
+.colunaPosicao {
+    width: 5vw;
+}
+
+.colunaEstado {
+    width: 20vw;
+}
+
+.colunaPopulacao {
+    width: 15vw;
 }
 
 td, th {
@@ -55,40 +94,39 @@ td, th {
     border: solid 1px black;
 }
 
-caption {
-    padding: 1em;
-    background-color: lightgray;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
 thead, tfoot {
-    background-color: darkslategray;
-    color: lightgray;
+    background-color: var(--verde);
+    color: white;
     font-size: 1.1em;
     text-align: center;
 }
 
-.posicao {
-    width: 20%;
+.regiao {
+    font-weight: bold;
 }
 
-tbody > tr > td:first-child {
+.subtotal {
+    background-color: var(--amarelo);    
+    color: black;
+}
+
+footer {
+    padding: 2em;
+    background-color: var(--azul);
+    color: white;
     text-align: center;
 }
 
-tbody > tr:nth-child(even) {
-    background-color: lightgray;
+footer > p {
+    font-size: 1.1em;
 }
 
-.estado {
-    width: 50%;
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
-.populacao {
-    width: 30%;
-}
-
-.numero {
-    text-align: right;
+a:hover {
+    text-decoration: underline;
 }
